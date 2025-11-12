@@ -20,14 +20,14 @@ describe("PATCH API Request Template", () => {
           Cookie: `token=${token}`,
         },
         body: {
-          firstname: "Moiz",
-          lastname: "Ahmad",
+          firstname: "Hey",
+          lastname: "QA",
           totalprice: 112,
         },
       }).then((response) => {
         expect(response.status).to.eq(200);
-        expect(response.body.firstname).to.eq("Moiz");
-        expect(response.body.lastname).to.eq("Ahmad");
+        expect(response.body.firstname).to.eq("Hey");
+        expect(response.body.lastname).to.eq("QA");
       });
     });
   });
