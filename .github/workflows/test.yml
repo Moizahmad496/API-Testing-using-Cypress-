@@ -29,11 +29,15 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5
         with:
-          spec: cypress/e2e/auth-create-token.cy.js,create-booking.cy.js,Filter-by-Name.cy.js,Get-bookings.cy.js
+          spec: |
+            cypress/e2e/auth-create-token.cy.js
+            cypress/e2e/create-booking.cy.js
+            cypress/e2e/Filter-by-Name.cy.js
+            cypress/e2e/Get-bookings.cy.js
 
-      # 5️⃣ Zip screenshots if tests fail
+      # 5️⃣ Zip failed screenshots if tests fail
       - name: Zip failed screenshots
-        if: failure()
+        if: ${{ failure() }}
         run: |
           mkdir -p temp
           zip -r temp/failed_screenshots.zip cypress/screenshots || echo "No screenshots folder found"
