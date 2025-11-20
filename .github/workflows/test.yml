@@ -34,6 +34,7 @@ jobs:
             cypress/e2e/create-booking.cy.js
             cypress/e2e/Filter-by-Name.cy.js
             cypress/e2e/Get-bookings.cy.js
+            cypress/e2e/unit-test.cy.js
 
       # 5️⃣ Zip failed screenshots if tests fail
       - name: Zip failed screenshots
