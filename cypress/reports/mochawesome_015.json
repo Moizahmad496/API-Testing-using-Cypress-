@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-19T11:16:35.709Z",
+    "end": "2025-11-19T11:16:36.230Z",
+    "duration": 521,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c1928b16-dcee-4f4d-ad31-c2bd165b7723",
+      "title": "",
+      "fullFile": "cypress\\e2e\\update-booking.cy.js",
+      "file": "cypress\\e2e\\update-booking.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c0ca004c-f202-430e-8391-04a0bb230b23",
+          "title": "PUT API Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "updates a booking",
+              "fullTitle": "PUT API Test updates a booking",
+              "timedOut": null,
+              "duration": 433,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'PUT',\n  url: 'https://restful-booker.herokuapp.com/booking/1',\n  // change ID\n  auth: {\n    username: 'admin',\n    password: 'password123'\n  },\n  body: {\n    firstname: 'James',\n    lastname: 'Moiz',\n    totalprice: 112,\n    depositpaid: true,\n    bookingdates: {\n      checkin: '2023-01-01',\n      checkout: '2023-01-10'\n    },\n    additionalneeds: 'Breakfast'\n  }\n}).then(res => {\n  expect(res.status).to.eq(200);\n  cy.log(JSON.stringify(res.body));\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://restful-booker.herokuapp.com/booking/1\n\nThe response we received from your web server was:\n\n  > 405: Method Not Allowed\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://restful-booker.herokuapp.com/booking/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/15.3.0 Chrome/136.0.7103.177 Electron/36.8.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic YWRtaW46cGFzc3dvcmQxMjM=\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 169\n}\nBody: {\"firstname\":\"James\",\"lastname\":\"Moiz\",\"totalprice\":112,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2023-01-01\",\"checkout\":\"2023-01-10\"},\"additionalneeds\":\"Breakfast\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 405 - Method Not Allowed\nHeaders: {\n  \"content-length\": \"18\",\n  \"content-type\": \"text/plain; charset=utf-8\",\n  \"date\": \"Wed, 19 Nov 2025 11:16:36 GMT\",\n  \"etag\": \"W/\\\"12-UGJMK66P4abaBlq0vKHJaCKuGCA\\\"\",\n  \"nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"response_headers\\\":[\\\"Via\\\"],\\\"max_age\\\":3600,\\\"success_fraction\\\":0.01,\\\"failure_fraction\\\":0.1}\",\n  \"report-to\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?s=cebfSFoF6UDSVd518QO0eGiw1NmrNC1D%2Fv533rQjWuc%3D\\\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\\\u0026ts=1763550996\\\"}],\\\"max_age\\\":3600}\",\n  \"reporting-endpoints\": \"heroku-nel=\\\"https://nel.heroku.com/reports?s=cebfSFoF6UDSVd518QO0eGiw1NmrNC1D%2Fv533rQjWuc%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1763550996\\\"\",\n  \"server\": \"Heroku\",\n  \"via\": \"1.1 heroku-router\",\n  \"x-powered-by\": \"Express\"\n}\nBody: Method Not Allowed\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://restful-booker.herokuapp.com/booking/1\n\nThe response we received from your web server was:\n\n  > 405: Method Not Allowed\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://restful-booker.herokuapp.com/booking/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/15.3.0 Chrome/136.0.7103.177 Electron/36.8.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic YWRtaW46cGFzc3dvcmQxMjM=\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 169\n}\nBody: {\"firstname\":\"James\",\"lastname\":\"Moiz\",\"totalprice\":112,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2023-01-01\",\"checkout\":\"2023-01-10\"},\"additionalneeds\":\"Breakfast\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 405 - Method Not Allowed\nHeaders: {\n  \"content-length\": \"18\",\n  \"content-type\": \"text/plain; charset=utf-8\",\n  \"date\": \"Wed, 19 Nov 2025 11:16:36 GMT\",\n  \"etag\": \"W/\\\"12-UGJMK66P4abaBlq0vKHJaCKuGCA\\\"\",\n  \"nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"response_headers\\\":[\\\"Via\\\"],\\\"max_age\\\":3600,\\\"success_fraction\\\":0.01,\\\"failure_fraction\\\":0.1}\",\n  \"report-to\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?s=cebfSFoF6UDSVd518QO0eGiw1NmrNC1D%2Fv533rQjWuc%3D\\\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\\\u0026ts=1763550996\\\"}],\\\"max_age\\\":3600}\",\n  \"reporting-endpoints\": \"heroku-nel=\\\"https://nel.heroku.com/reports?s=cebfSFoF6UDSVd518QO0eGiw1NmrNC1D%2Fv533rQjWuc%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1763550996\\\"\",\n  \"server\": \"Heroku\",\n  \"via\": \"1.1 heroku-router\",\n  \"x-powered-by\": \"Express\"\n}\nBody: Method Not Allowed\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:58143/__cypress/runner/cypress_runner.js:136321:72)\n    at tryCatcher (http://localhost:58143/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:58143/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:58143/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:58143/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:58143/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:58143/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:58143/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:58143/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:58143/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://api_testing/./cypress/e2e/update-booking.cy.js:3:7)",
+                "diff": null
+              },
+              "uuid": "596b1d1b-312c-49fe-bff4-e8490db7e8f9",
+              "parentUUID": "c0ca004c-f202-430e-8391-04a0bb230b23",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "596b1d1b-312c-49fe-bff4-e8490db7e8f9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 433,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

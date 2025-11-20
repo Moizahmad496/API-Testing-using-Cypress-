@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-19T10:07:07.389Z",
+    "end": "2025-11-19T10:07:07.735Z",
+    "duration": 346,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aee251a3-0c69-4935-b116-17ca73f25698",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Filter-Checkin &amp; Out.cy.js",
+      "file": "cypress\\e2e\\Filter-Checkin &amp; Out.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0a43ee47-acd7-4c9d-b1fe-842ec11f5a61",
+          "title": "GET API Request Template",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should successfully fetch data from API for the specific checkin & check out filter",
+              "fullTitle": "GET API Request Template should successfully fetch data from API for the specific checkin & check out filter",
+              "timedOut": null,
+              "duration": 302,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"GET\",\n  url: \"https://restful-booker.herokuapp.com/booking\",\n  qs: {\n    checkin: \"2023-01-03\"\n    //checkout: \"2024-03-14\",\n  }\n}).then(response => {\n  expect(response.status).to.eq(200);\n  cy.log(JSON.stringify(response.body));\n});",
+              "err": {},
+              "uuid": "bd0a8554-6bbe-4edf-9dbe-792801a1323a",
+              "parentUUID": "0a43ee47-acd7-4c9d-b1fe-842ec11f5a61",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bd0a8554-6bbe-4edf-9dbe-792801a1323a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 302,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

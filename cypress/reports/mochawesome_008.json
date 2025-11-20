@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-19T11:16:12.146Z",
+    "end": "2025-11-19T11:16:13.667Z",
+    "duration": 1521,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "37f6f853-d0d9-406f-bfc5-ae2b0475201f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Delete-booking.cy.js",
+      "file": "cypress\\e2e\\Delete-booking.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6fb44447-ec64-49b0-8d02-33bafec22ce2",
+          "title": "DELETE API Request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete a booking by ID",
+              "fullTitle": "DELETE API Request should delete a booking by ID",
+              "timedOut": null,
+              "duration": 1461,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const bookingId = 724; // Replace with your booking ID\nconst token = 'aa1e0f6d1de1649'; // Get a fresh token before running\ncy.request({\n  method: 'DELETE',\n  url: `https://restful-booker.herokuapp.com/booking/${bookingId}`,\n  headers: {\n    'Content-Type': 'application/json',\n    'Cookie': `token=${token}`\n  },\n  failOnStatusCode: false // So Cypress doesn't break on 403\n}).then(response => {\n  cy.log(`Status: ${response.status}`);\n  cy.log(`Body: ${JSON.stringify(response.body)}`);\n  // Expect successful delete (201 = Created/Deleted in this API)\n  if (response.status === 201) {\n    expect(response.status).to.eq(201);\n    cy.log('Booking deleted successfully ✅');\n  } else {\n    cy.log('Delete failed ⚠️ Check token or booking ID');\n  }\n});",
+              "err": {},
+              "uuid": "e0479571-a7e8-48b8-a53a-b81ac8fe22b1",
+              "parentUUID": "6fb44447-ec64-49b0-8d02-33bafec22ce2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e0479571-a7e8-48b8-a53a-b81ac8fe22b1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1461,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

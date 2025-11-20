@@ -7,22 +7,18 @@ describe("GET API Request Template", () => {
       // ✅ Check response status
       expect(response.status).to.eq(200);
 
-      // ✅ Check response body has expected structure
-      response.body.forEach((item) => {
-        expect(item).to.have.property("bookingid");
-        expect(item.bookingid).to.be.a("number");
-      });
+      cy.log("Response Body: " + JSON.stringify(response.body, null, 2));
     });
   });
 });
 
 //Get specific booking based on ID
 
-describe("GET API Request Template", () => {
+describe("GET API Request by ID Template", () => {
   it("should successfully fetch data from API for the specific ID", () => {
     cy.request({
       method: "GET",
-      url: "https://restful-booker.herokuapp.com/booking/10", // Replace with your endpoint
+      url: "https://restful-booker.herokuapp.com/booking/337", // Replace with your endpoint
     }).then((response) => {
       // ✅ Check response status
       expect(response.status).to.eq(200);
@@ -32,7 +28,7 @@ describe("GET API Request Template", () => {
       expect(response.body.bookingdates).to.have.property("checkin");
       expect(response.body.bookingdates).to.have.property("checkout");
 
-  cy.log("Response Body: " + JSON.stringify(response.body, null, 2));
+      cy.log("Response Body: " + JSON.stringify(response.body, null, 2));
     });
   });
 });

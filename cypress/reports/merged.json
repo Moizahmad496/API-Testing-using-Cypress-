@@ -1,0 +1,550 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 9,
+    "passes": 9,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 9,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-11-19T10:07:04.054Z",
+    "end": "2025-11-19T10:07:27.487Z",
+    "duration": 23433
+  },
+  "results": [
+    {
+      "uuid": "aee251a3-0c69-4935-b116-17ca73f25698",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Filter-Checkin &amp; Out.cy.js",
+      "file": "cypress\\e2e\\Filter-Checkin &amp; Out.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0a43ee47-acd7-4c9d-b1fe-842ec11f5a61",
+          "title": "GET API Request Template",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should successfully fetch data from API for the specific checkin & check out filter",
+              "fullTitle": "GET API Request Template should successfully fetch data from API for the specific checkin & check out filter",
+              "timedOut": null,
+              "duration": 302,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"GET\",\n  url: \"https://restful-booker.herokuapp.com/booking\",\n  qs: {\n    checkin: \"2023-01-03\"\n    //checkout: \"2024-03-14\",\n  }\n}).then(response => {\n  expect(response.status).to.eq(200);\n  cy.log(JSON.stringify(response.body));\n});",
+              "err": {},
+              "uuid": "bd0a8554-6bbe-4edf-9dbe-792801a1323a",
+              "parentUUID": "0a43ee47-acd7-4c9d-b1fe-842ec11f5a61",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bd0a8554-6bbe-4edf-9dbe-792801a1323a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 302,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e08c218a-d16b-4080-a7ef-919c18ecfcdb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Filter-by-Name.cy.js",
+      "file": "cypress\\e2e\\Filter-by-Name.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "287f22e2-51fa-4319-aca4-2fec089a0f73",
+          "title": "GET API Request Template",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should successfully fetch data from API for the specific Name",
+              "fullTitle": "GET API Request Template should successfully fetch data from API for the specific Name",
+              "timedOut": null,
+              "duration": 287,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: 'https://restful-booker.herokuapp.com/booking',\n  qs: {\n    firstname: 'Susan'\n  }\n}).then(response => {\n  expect(response.status).to.eq(200);\n  cy.log(JSON.stringify(response.body));\n});",
+              "err": {},
+              "uuid": "70a9b873-f9b4-439c-b3bc-bc5765a9d7fa",
+              "parentUUID": "287f22e2-51fa-4319-aca4-2fec089a0f73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "70a9b873-f9b4-439c-b3bc-bc5765a9d7fa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 287,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b71626a5-6b3e-4767-879f-0aa0c4033399",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Get-bookings.cy.js",
+      "file": "cypress\\e2e\\Get-bookings.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "51c17edb-9ca4-4ea0-a6da-95c8ea693146",
+          "title": "GET API Request Template",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should successfully fetch data from API",
+              "fullTitle": "GET API Request Template should successfully fetch data from API",
+              "timedOut": null,
+              "duration": 5121,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"GET\",\n  url: \" https://kaplapis.accountsdash.com/api/Api/news?page=5&pageSize=5&sortBy=newsdate&sortDirection=desc\" // Replace with your endpoint\n}).then(response => {\n  // ✅ Check response status\n  expect(response.status).to.eq(200);\n  cy.log(\"Response Body: \" + JSON.stringify(response.body, null, 2));\n});",
+              "err": {},
+              "uuid": "de2d8a86-3e43-414e-b4ff-8df5a79d9b81",
+              "parentUUID": "51c17edb-9ca4-4ea0-a6da-95c8ea693146",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "de2d8a86-3e43-414e-b4ff-8df5a79d9b81"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5121,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "855bce2a-a838-42da-a4a8-e19b37ae1fd3",
+          "title": "GET API Request Template",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should successfully fetch data from API for the specific ID",
+              "fullTitle": "GET API Request Template should successfully fetch data from API for the specific ID",
+              "timedOut": null,
+              "duration": 276,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"GET\",\n  url: \"https://restful-booker.herokuapp.com/booking/337\" // Replace with your endpoint\n}).then(response => {\n  // ✅ Check response status\n  expect(response.status).to.eq(200);\n  // ✅ Check response body has expected structure\n  expect(response.body).to.have.property(\"bookingdates\");\n  expect(response.body.bookingdates).to.have.property(\"checkin\");\n  expect(response.body.bookingdates).to.have.property(\"checkout\");\n  cy.log(\"Response Body: \" + JSON.stringify(response.body, null, 2));\n});",
+              "err": {},
+              "uuid": "36fd4cf9-bd85-4c4c-b00c-ceb98d454d79",
+              "parentUUID": "855bce2a-a838-42da-a4a8-e19b37ae1fd3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "36fd4cf9-bd85-4c4c-b00c-ceb98d454d79"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 276,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0a6d9660-ae8c-4620-a890-a13cc970cc44",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Partial-Update.cy.js",
+      "file": "cypress\\e2e\\Partial-Update.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6c282297-ae69-4d5b-bc55-c748f54e11d7",
+          "title": "PUT API Request Template for Partial Update",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should update part of the booking successfully",
+              "fullTitle": "PUT API Request Template for Partial Update should update part of the booking successfully",
+              "timedOut": null,
+              "duration": 604,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// First, create an auth token (PUT requires authentication)\ncy.request({\n  method: \"POST\",\n  url: \"https://restful-booker.herokuapp.com/auth\",\n  body: {\n    username: \"admin\",\n    password: \"password123\"\n  }\n}).then(authResponse => {\n  const token = authResponse.body.token;\n  // Perform PUT request for partial update\n  cy.request({\n    method: \"PUT\",\n    url: \"https://restful-booker.herokuapp.com/booking/211\",\n    // replace with valid booking ID\n    headers: {\n      \"Content-Type\": \"application/json\",\n      Cookie: `token=${token}`\n    },\n    body: {\n      firstname: \"Josh\",\n      lastname: \"Allen\",\n      totalprice: 111,\n      depositpaid: true,\n      bookingdates: {\n        checkin: \"2018-01-01\",\n        checkout: \"2019-01-01\"\n      }\n    }\n  }).then(response => {\n    expect(response.status).to.eq(200);\n    expect(response.body.firstname).to.eq(\"Josh\");\n    expect(response.body.lastname).to.eq(\"Allen\");\n  });\n});",
+              "err": {},
+              "uuid": "8b01cf00-e82c-429d-a0f2-ddfe6d12b3b2",
+              "parentUUID": "6c282297-ae69-4d5b-bc55-c748f54e11d7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8b01cf00-e82c-429d-a0f2-ddfe6d12b3b2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 604,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ef57b8a0-b10e-4005-9d31-a339c5976e96",
+      "title": "",
+      "fullFile": "cypress\\e2e\\auth-create-token.cy.js",
+      "file": "cypress\\e2e\\auth-create-token.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7a8a4c8f-913b-4395-8a71-335fa5cebc3f",
+          "title": "Authentication & Token Handling",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login and store token",
+              "fullTitle": "Authentication & Token Handling should login and store token",
+              "timedOut": null,
+              "duration": 299,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('auth.json').then(authData => {\n  cy.request('POST', 'https://restful-booker.herokuapp.com/auth', {\n    username: authData.username,\n    password: authData.password\n  }).then(response => {\n    expect(response.status).to.eq(200);\n    expect(response.body).to.have.property('token');\n    expect(response.body.token).to.be.a('string');\n    expect(response.body.token).to.have.length.greaterThan(0);\n    // Save token in cypress environment variable\n    Cypress.env('authToken', response.body.token);\n    cy.log('Token generated: ' + response.body.token);\n  });\n});",
+              "err": {},
+              "uuid": "4d02a487-762b-4a80-aa87-d52ad91147d7",
+              "parentUUID": "7a8a4c8f-913b-4395-8a71-335fa5cebc3f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4d02a487-762b-4a80-aa87-d52ad91147d7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 299,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "febf74f3-ccf8-47e0-ae44-71dc4c3704e9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\create-booking.cy.js",
+      "file": "cypress\\e2e\\create-booking.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bea8925f-29ec-439d-b033-b2d44d9fc330",
+          "title": "Booking API Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should create a new booking",
+              "fullTitle": "Booking API Test Suite should create a new booking",
+              "timedOut": null,
+              "duration": 291,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: \"https://restful-booker.herokuapp.com/booking\",\n  body: {\n    firstname: \"Moiz\",\n    lastname: \"Ahmad\",\n    totalprice: 111,\n    depositpaid: true,\n    bookingdates: {\n      checkin: \"2018-01-01\",\n      checkout: \"2019-01-01\"\n    },\n    additionalneeds: \"Breakfast\"\n  }\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property(\"bookingid\");\n  bookingId = response.body.bookingid;\n  cy.log(\"Created Booking ID: \" + bookingId);\n});",
+              "err": {},
+              "uuid": "825fb85b-6ae7-4c79-9ca3-710096711884",
+              "parentUUID": "bea8925f-29ec-439d-b033-b2d44d9fc330",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "825fb85b-6ae7-4c79-9ca3-710096711884"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 291,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f990c497-7107-48bc-993c-54ae63d2fcfd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\update-booking.cy.js",
+      "file": "cypress\\e2e\\update-booking.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dca2ad47-e7c7-40e0-bf97-208d23d20cd8",
+          "title": "PUT API Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "updates a booking",
+              "fullTitle": "PUT API Test updates a booking",
+              "timedOut": null,
+              "duration": 300,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'PUT',\n  url: 'https://restful-booker.herokuapp.com/booking/1',\n  // change ID\n  auth: {\n    username: 'admin',\n    password: 'password123'\n  },\n  body: {\n    firstname: 'James',\n    lastname: 'Moiz',\n    totalprice: 112,\n    depositpaid: true,\n    bookingdates: {\n      checkin: '2023-01-01',\n      checkout: '2023-01-10'\n    },\n    additionalneeds: 'Breakfast'\n  }\n}).then(res => {\n  expect(res.status).to.eq(200);\n  cy.log(JSON.stringify(res.body));\n});",
+              "err": {},
+              "uuid": "c08221df-ee6e-4fc3-abf8-4207f5ce344e",
+              "parentUUID": "dca2ad47-e7c7-40e0-bf97-208d23d20cd8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c08221df-ee6e-4fc3-abf8-4207f5ce344e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 300,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "6a66bd06-5047-4d23-a3f1-71e0aacd509d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Delete-booking.cy.js",
+      "file": "cypress\\e2e\\Delete-booking.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e0e09756-0ca6-46bb-b597-1b314022c367",
+          "title": "DELETE API Request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete a booking by ID",
+              "fullTitle": "DELETE API Request should delete a booking by ID",
+              "timedOut": null,
+              "duration": 1496,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const bookingId = 724; // Replace with your booking ID\nconst token = 'aa1e0f6d1de1649'; // Get a fresh token before running\ncy.request({\n  method: 'DELETE',\n  url: `https://restful-booker.herokuapp.com/booking/${bookingId}`,\n  headers: {\n    'Content-Type': 'application/json',\n    'Cookie': `token=${token}`\n  },\n  failOnStatusCode: false // So Cypress doesn't break on 403\n}).then(response => {\n  cy.log(`Status: ${response.status}`);\n  cy.log(`Body: ${JSON.stringify(response.body)}`);\n  // Expect successful delete (201 = Created/Deleted in this API)\n  if (response.status === 201) {\n    expect(response.status).to.eq(201);\n    cy.log('Booking deleted successfully ✅');\n  } else {\n    cy.log('Delete failed ⚠️ Check token or booking ID');\n  }\n});",
+              "err": {},
+              "uuid": "4127feb0-72c6-4636-9246-81c73cddad0d",
+              "parentUUID": "e0e09756-0ca6-46bb-b597-1b314022c367",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4127feb0-72c6-4636-9246-81c73cddad0d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1496,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

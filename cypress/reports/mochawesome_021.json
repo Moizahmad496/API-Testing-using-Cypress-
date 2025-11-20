@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-20T05:20:20.277Z",
+    "end": "2025-11-20T05:20:20.764Z",
+    "duration": 487,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ef8f0bbd-e1ff-481e-b0b1-93ec8af5b4eb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\auth-create-token.cy.js",
+      "file": "cypress\\e2e\\auth-create-token.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e2cf1fbf-e9e3-48c6-9e68-4bf56360c523",
+          "title": "Authentication & Token Handling",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login and store token",
+              "fullTitle": "Authentication & Token Handling should login and store token",
+              "timedOut": null,
+              "duration": 404,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('auth.json').then(authData => {\n  cy.request('POST', 'https://restful-booker.herokuapp.com/auth', {\n    username: authData.username,\n    password: authData.password\n  }).then(response => {\n    expect(response.status).to.eq(200);\n    expect(response.body).to.have.property('token');\n    expect(response.body.token).to.be.a('string');\n    expect(response.body.token).to.have.length.greaterThan(0);\n    // Save token in cypress environment variable\n    Cypress.env('authToken', response.body.token);\n    cy.log('Token generated: ' + response.body.token);\n  });\n});",
+              "err": {},
+              "uuid": "25ab4d6d-d684-4e3f-b409-6b6e03901a91",
+              "parentUUID": "e2cf1fbf-e9e3-48c6-9e68-4bf56360c523",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "25ab4d6d-d684-4e3f-b409-6b6e03901a91"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 404,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

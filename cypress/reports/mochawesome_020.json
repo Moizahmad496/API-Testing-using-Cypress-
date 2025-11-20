@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-20T05:20:16.911Z",
+    "end": "2025-11-20T05:20:17.766Z",
+    "duration": 855,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bdc14eab-af45-4485-ac39-03df6c5bac1c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Partial-Update.cy.js",
+      "file": "cypress\\e2e\\Partial-Update.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ef195e43-557d-4be3-8c64-8b8a7433ced7",
+          "title": "PUT API Request Template for Partial Update",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should update part of the booking successfully",
+              "fullTitle": "PUT API Request Template for Partial Update should update part of the booking successfully",
+              "timedOut": null,
+              "duration": 745,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// First, create an auth token (PUT requires authentication)\ncy.request({\n  method: \"POST\",\n  url: \"https://restful-booker.herokuapp.com/auth\",\n  body: {\n    username: \"admin\",\n    password: \"password123\"\n  }\n}).then(authResponse => {\n  const token = authResponse.body.token;\n  // Perform PUT request for partial update\n  cy.request({\n    method: \"PUT\",\n    url: \"https://restful-booker.herokuapp.com/booking/1\",\n    // replace with valid booking ID\n    headers: {\n      \"Content-Type\": \"application/json\",\n      Cookie: `token=${token}`\n    },\n    body: {\n      firstname: \"Josh\",\n      lastname: \"Allen\",\n      totalprice: 111,\n      depositpaid: true,\n      bookingdates: {\n        checkin: \"2018-01-01\",\n        checkout: \"2019-01-01\"\n      }\n    }\n  }).then(response => {\n    expect(response.status).to.eq(200);\n    expect(response.body.firstname).to.eq(\"Josh\");\n    expect(response.body.lastname).to.eq(\"Allen\");\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://restful-booker.herokuapp.com/booking/1\n\nThe response we received from your web server was:\n\n  > 405: Method Not Allowed\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://restful-booker.herokuapp.com/booking/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"Cookie\": \"token=571b9d169c6ade6\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/15.3.0 Chrome/136.0.7103.177 Electron/36.8.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 139\n}\nBody: {\"firstname\":\"Josh\",\"lastname\":\"Allen\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2018-01-01\",\"checkout\":\"2019-01-01\"}}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 405 - Method Not Allowed\nHeaders: {\n  \"content-length\": \"18\",\n  \"content-type\": \"text/plain; charset=utf-8\",\n  \"date\": \"Thu, 20 Nov 2025 05:20:17 GMT\",\n  \"etag\": \"W/\\\"12-UGJMK66P4abaBlq0vKHJaCKuGCA\\\"\",\n  \"nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"response_headers\\\":[\\\"Via\\\"],\\\"max_age\\\":3600,\\\"success_fraction\\\":0.01,\\\"failure_fraction\\\":0.1}\",\n  \"report-to\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?s=TKZyj3e8Qjj%2BABvNKF1vVgwmraDYtz3EfKpUW9d2gyg%3D\\\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\\\u0026ts=1763616017\\\"}],\\\"max_age\\\":3600}\",\n  \"reporting-endpoints\": \"heroku-nel=\\\"https://nel.heroku.com/reports?s=TKZyj3e8Qjj%2BABvNKF1vVgwmraDYtz3EfKpUW9d2gyg%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1763616017\\\"\",\n  \"server\": \"Heroku\",\n  \"via\": \"1.1 heroku-router\",\n  \"x-powered-by\": \"Express\"\n}\nBody: Method Not Allowed\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://restful-booker.herokuapp.com/booking/1\n\nThe response we received from your web server was:\n\n  > 405: Method Not Allowed\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://restful-booker.herokuapp.com/booking/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"Cookie\": \"token=571b9d169c6ade6\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/15.3.0 Chrome/136.0.7103.177 Electron/36.8.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 139\n}\nBody: {\"firstname\":\"Josh\",\"lastname\":\"Allen\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2018-01-01\",\"checkout\":\"2019-01-01\"}}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 405 - Method Not Allowed\nHeaders: {\n  \"content-length\": \"18\",\n  \"content-type\": \"text/plain; charset=utf-8\",\n  \"date\": \"Thu, 20 Nov 2025 05:20:17 GMT\",\n  \"etag\": \"W/\\\"12-UGJMK66P4abaBlq0vKHJaCKuGCA\\\"\",\n  \"nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"response_headers\\\":[\\\"Via\\\"],\\\"max_age\\\":3600,\\\"success_fraction\\\":0.01,\\\"failure_fraction\\\":0.1}\",\n  \"report-to\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?s=TKZyj3e8Qjj%2BABvNKF1vVgwmraDYtz3EfKpUW9d2gyg%3D\\\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\\\u0026ts=1763616017\\\"}],\\\"max_age\\\":3600}\",\n  \"reporting-endpoints\": \"heroku-nel=\\\"https://nel.heroku.com/reports?s=TKZyj3e8Qjj%2BABvNKF1vVgwmraDYtz3EfKpUW9d2gyg%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1763616017\\\"\",\n  \"server\": \"Heroku\",\n  \"via\": \"1.1 heroku-router\",\n  \"x-powered-by\": \"Express\"\n}\nBody: Method Not Allowed\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:51950/__cypress/runner/cypress_runner.js:136321:72)\n    at tryCatcher (http://localhost:51950/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:51950/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:51950/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:51950/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:51950/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:51950/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:51950/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:51950/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:51950/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://api_testing/./cypress/e2e/Partial-Update.cy.js:15:9)\n    at getRet (http://localhost:51950/__cypress/runner/cypress_runner.js:121618:20)\n    at tryCatcher (http://localhost:51950/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:51950/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:51950/__cypress/runner/cypress_runner.js:121629:66)\n    at Context.then (http://localhost:51950/__cypress/runner/cypress_runner.js:121880:21)\n    at wrapped (http://localhost:51950/__cypress/runner/cypress_runner.js:141596:19)",
+                "diff": null
+              },
+              "uuid": "1701d06b-650e-4411-8686-60c6127bf704",
+              "parentUUID": "ef195e43-557d-4be3-8c64-8b8a7433ced7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "1701d06b-650e-4411-8686-60c6127bf704"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 745,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

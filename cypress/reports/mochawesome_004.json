@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-19T10:07:19.601Z",
+    "end": "2025-11-19T10:07:20.260Z",
+    "duration": 659,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0a6d9660-ae8c-4620-a890-a13cc970cc44",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Partial-Update.cy.js",
+      "file": "cypress\\e2e\\Partial-Update.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6c282297-ae69-4d5b-bc55-c748f54e11d7",
+          "title": "PUT API Request Template for Partial Update",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should update part of the booking successfully",
+              "fullTitle": "PUT API Request Template for Partial Update should update part of the booking successfully",
+              "timedOut": null,
+              "duration": 604,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// First, create an auth token (PUT requires authentication)\ncy.request({\n  method: \"POST\",\n  url: \"https://restful-booker.herokuapp.com/auth\",\n  body: {\n    username: \"admin\",\n    password: \"password123\"\n  }\n}).then(authResponse => {\n  const token = authResponse.body.token;\n  // Perform PUT request for partial update\n  cy.request({\n    method: \"PUT\",\n    url: \"https://restful-booker.herokuapp.com/booking/211\",\n    // replace with valid booking ID\n    headers: {\n      \"Content-Type\": \"application/json\",\n      Cookie: `token=${token}`\n    },\n    body: {\n      firstname: \"Josh\",\n      lastname: \"Allen\",\n      totalprice: 111,\n      depositpaid: true,\n      bookingdates: {\n        checkin: \"2018-01-01\",\n        checkout: \"2019-01-01\"\n      }\n    }\n  }).then(response => {\n    expect(response.status).to.eq(200);\n    expect(response.body.firstname).to.eq(\"Josh\");\n    expect(response.body.lastname).to.eq(\"Allen\");\n  });\n});",
+              "err": {},
+              "uuid": "8b01cf00-e82c-429d-a0f2-ddfe6d12b3b2",
+              "parentUUID": "6c282297-ae69-4d5b-bc55-c748f54e11d7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8b01cf00-e82c-429d-a0f2-ddfe6d12b3b2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 604,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

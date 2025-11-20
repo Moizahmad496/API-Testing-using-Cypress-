@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-19T10:07:09.942Z",
+    "end": "2025-11-19T10:07:10.261Z",
+    "duration": 319,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e08c218a-d16b-4080-a7ef-919c18ecfcdb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Filter-by-Name.cy.js",
+      "file": "cypress\\e2e\\Filter-by-Name.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "287f22e2-51fa-4319-aca4-2fec089a0f73",
+          "title": "GET API Request Template",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should successfully fetch data from API for the specific Name",
+              "fullTitle": "GET API Request Template should successfully fetch data from API for the specific Name",
+              "timedOut": null,
+              "duration": 287,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: 'https://restful-booker.herokuapp.com/booking',\n  qs: {\n    firstname: 'Susan'\n  }\n}).then(response => {\n  expect(response.status).to.eq(200);\n  cy.log(JSON.stringify(response.body));\n});",
+              "err": {},
+              "uuid": "70a9b873-f9b4-439c-b3bc-bc5765a9d7fa",
+              "parentUUID": "287f22e2-51fa-4319-aca4-2fec089a0f73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "70a9b873-f9b4-439c-b3bc-bc5765a9d7fa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 287,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

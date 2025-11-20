@@ -1,6 +1,6 @@
-describe("PATCH API Request Template", () => {
+describe("PUT API Request Template for Partial Update", () => {
   it("should update part of the booking successfully", () => {
-    // First, create an auth token (PATCH requires authentication)
+    // First, create an auth token (PUT requires authentication)
     cy.request({
       method: "POST",
       url: "https://restful-booker.herokuapp.com/auth",
@@ -11,23 +11,28 @@ describe("PATCH API Request Template", () => {
     }).then((authResponse) => {
       const token = authResponse.body.token;
 
-      // Perform PATCH request
+      // Perform PUT request for partial update
       cy.request({
-        method: "PATCH",
+        method: "PUT",
         url: "https://restful-booker.herokuapp.com/booking/1", // replace with valid booking ID
         headers: {
           "Content-Type": "application/json",
           Cookie: `token=${token}`,
         },
         body: {
-          firstname: "Hey",
-          lastname: "QA",
-          totalprice: 112,
-        },
+          firstname: "Josh",
+          lastname: "Allen",
+          totalprice: 111,
+          depositpaid: true,
+          bookingdates: {
+            checkin: "2018-01-01",
+            checkout: "2019-01-01"
+          }
+        }
       }).then((response) => {
         expect(response.status).to.eq(200);
-        expect(response.body.firstname).to.eq("Hey");
-        expect(response.body.lastname).to.eq("QA");
+        expect(response.body.firstname).to.eq("Josh");
+        expect(response.body.lastname).to.eq("Allen");
       });
     });
   });
